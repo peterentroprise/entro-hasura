@@ -12,6 +12,6 @@ steps:
         args:
         - run
         - --filename=entro-hasura-deployment.yaml
-        - --image=us.gcr.io/$PROJECT_ID/entro-hasura:latest
+        - --image=us.gcr.io/$PROJECT_ID/entro-hasura
         - --location=us-central1-c
         - --cluster=prod-cluster
