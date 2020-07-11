@@ -1,26 +1,17 @@
-# # cloudbuild.yaml
-# steps:
-#     # build & push the container image
-#     - name: "gcr.io/kaniko-project/executor:latest"
-#       args:
-#         [
-#           "--cache=true",
-#           "--cache-ttl=48h",
-#           "--destination=gcr.io/$PROJECT_ID/hasura-postgre:latest",
-#         ]
-#       # Deploy container image to Cloud Run
-#     - name: "gcr.io/cloud-builders/gcloud"
-#       args:
-#         [
-#           "beta",
-#           "run",
-#           "deploy",
-#           "hasura-postgre",
-#           "--image",
-#           "gcr.io/$PROJECT_ID/hasura-postgre:latest",
-#           "--region",
-#           "us-central1",
-#           "--allow-unauthenticated",
-#           "--platform",
-#           "managed",
-#         ]
+# cloudbuild.yaml
+steps:
+    # build & push the container image
+    - name: "gcr.io/kaniko-project/executor:latest"
+      args:
+        [
+          "--cache=true",
+          "--cache-ttl=48h",
+          "--destination=gcr.io/$PROJECT_ID/entro-hasura:latest",
+        ]
+    - name: "gcr.io/cloud-builders/gke-deploy"
+        args:
+        - run
+        - --filename=entro-hasura-deployment.yaml
+        - --image=us.gcr.io/$PROJECT_ID/entro-hasura:latest
+        - --location=us-central1-c
+        - --cluster=prod-cluster
