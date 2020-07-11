@@ -9,9 +9,9 @@ steps:
           "--destination=gcr.io/$PROJECT_ID/entro-hasura:latest",
         ]
     - name: "gcr.io/cloud-builders/gke-deploy"
-        args:
-        - run
-        - --filename=entro-hasura-deployment.yaml
-        - --image=us.gcr.io/$PROJECT_ID/entro-hasura
-        - --location=us-central1-c
-        - --cluster=prod-cluster
+      args:
+      - run
+      - --filename=entro-hasura-deployment.yaml
+      - --image=us.gcr.io/$PROJECT_ID/entro-hasura
+      - --location=us-central1-c
+      - --cluster=prod-cluster
