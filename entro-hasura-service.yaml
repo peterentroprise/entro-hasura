@@ -6,7 +6,6 @@
       namespace: "default"
       labels:
         app: "entro-hasura"
-        app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
     spec:
       ports:
       - protocol: "TCP"
