@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: entro-hasura-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: entro-hasura-ingress
+    kubernetes.io/ingress.global-static-ip-name: entro-hasura-address
     networking.gke.io/managed-certificates: entro-hasura-certificate
 spec:
   backend:
