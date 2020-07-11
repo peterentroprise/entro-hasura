@@ -7,5 +7,5 @@ metadata:
     networking.gke.io/managed-certificates: entro-hasura-certificate
 spec:
   backend:
-    serviceName: entro-hasura
+    serviceName: entro-hasura-service
     servicePort: 80
