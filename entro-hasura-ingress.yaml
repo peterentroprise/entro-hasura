@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: hasura-ingress
+  name: entro-hasura-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: entro-hasura-ingress
     networking.gke.io/managed-certificates: entro-hasura-certificate
